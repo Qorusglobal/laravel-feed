@@ -14,7 +14,7 @@ class FeedItem
 
     protected string $title;
 
-    protected CarbonInterface $updated;
+    protected CarbonInterface|string $updated;
 
     protected string $summary;
 
@@ -136,13 +136,13 @@ class FeedItem
         return $this;
     }
 
-    public function timestamp(): string
+    public function timestamp(): self
     {
-        if ($this->feed->format() === 'rss') {
-            return $this->updated->toRssString();
-        }
+        $this->updated = ($this->feed->format() === 'rss')
+            ? $this->updated->toRssString()
+            : $this->updated->toRfc3339String();
 
-        return $this->updated->toRfc3339String();
+        return $this;
     }
 
     public function validate(): void

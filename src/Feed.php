@@ -81,6 +81,7 @@ class Feed implements Responsable
         $feedItem->feed = $this;
 
         $feedItem->validate();
+        $feedItem->timestamp();
 
         return $feedItem;
     }
@@ -95,9 +96,6 @@ class Feed implements Responsable
             ->sortBy(fn ($feedItem) => $feedItem->updated)
             ->last()->updated;
 
-
-        return $this->format === 'rss'
-            ? $updatedAt->toRssString()
-            : $updatedAt->toRfc3339String();
+        return $updatedAt;
     }
 }
