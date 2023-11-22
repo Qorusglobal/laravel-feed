@@ -2,6 +2,16 @@
 
 This guide contains the steps to follow for upgrading `laravel-feed` versions.
 
+## Upgrading from v4 to v4.3
+
+v4.3 added support for styled RSS feeds. To enable them issue this command
+
+```bash
+php artisan feed:install
+```
+
+This command will published the required assets.
+
 ## Upgrading from v3 to v4
 
 When upgrading from v3 to v4, there are a number of changes required; they primarily affect the configuration file, however

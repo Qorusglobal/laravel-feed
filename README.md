@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-feed.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-feed)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/spatie/laravel-feed/run-tests?label=tests)
+[![run-tests](https://github.com/spatie/laravel-feed/actions/workflows/run-tests.yml/badge.svg)](https://github.com/spatie/laravel-feed/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-feed.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-feed)
 
 This package provides an easy way to generate a feed for your Laravel application.  Supported formats are [RSS](http://www.whatisrss.com/), [Atom](https://en.wikipedia.org/wiki/Atom_(standard)), and [JSON](https://jsonfeed.org). There's almost no coding required on your part. Just follow the installation instructions, update your config file, and you're good to go.
@@ -37,7 +37,7 @@ Optionally, you can pass a string as a first argument of the macro. The string w
 Next, you must publish the config file:
 
 ```bash
-php artisan vendor:publish --provider="Spatie\Feed\FeedServiceProvider" --tag="feed-config"
+php artisan feed:install
 ```
 
 Here's what that looks like:
